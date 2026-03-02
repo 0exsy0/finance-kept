@@ -81,66 +81,66 @@ const modules: Module[] = [
 
 const LearningPath = () => {
   return (
-    <section className="py-24" id="program">
+    <section className="py-16 md:py-24" id="program">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold font-display mb-4">
-            Твой путь к <span className="text-gradient">мастерству</span>
+          <h2 className="text-3xl md:text-5xl font-bold font-display text-foreground mb-3">
+            Программа курса
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl">
             7 модулей. От нуля до уровня аналитика Big&nbsp;4. Каждый шаг — реальная практика на кейсах Kept.
           </p>
         </motion.div>
 
-        <div className="relative max-w-3xl mx-auto">
+        <div className="relative max-w-3xl">
           {/* Vertical line */}
-          <div className="absolute left-6 md:left-8 top-0 bottom-0 w-px line-glow" />
+          <div className="absolute left-6 md:left-8 top-0 bottom-0 w-px bg-border" />
 
-          <div className="space-y-6">
+          <div className="space-y-5">
             {modules.map((mod, i) => (
               <motion.div
                 key={mod.id}
-                initial={{ opacity: 0, x: -30 }}
+                initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
+                transition={{ delay: i * 0.06 }}
                 className="relative pl-16 md:pl-20"
               >
                 {/* Node */}
-                <div className={`absolute left-3 md:left-5 top-6 w-6 h-6 md:w-7 md:h-7 rounded-full flex items-center justify-center text-xs font-bold z-10 ${
+                <div className={`absolute left-3 md:left-5 top-5 w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold z-10 ${
                   mod.free
-                    ? "bg-success text-success-foreground"
-                    : "bg-primary/20 text-primary border border-primary/40"
+                    ? "bg-primary text-primary-foreground"
+                    : "bg-muted text-muted-foreground border border-border"
                 }`}>
                   {mod.id}
                 </div>
 
-                <div className={`group glass rounded-xl p-6 hover:border-primary/40 transition-all duration-300 cursor-pointer ${
-                  mod.free ? "border-success/30 bg-success/5" : ""
+                <div className={`group rounded-2xl border p-5 hover:border-primary/40 transition-all duration-300 cursor-pointer ${
+                  mod.free ? "border-primary/30 bg-secondary/50" : "border-border bg-background"
                 }`}>
-                  <div className="flex items-start justify-between gap-4 mb-3">
+                  <div className="flex items-start justify-between gap-4 mb-2">
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-1">
                         {mod.free ? (
-                          <Unlock className="w-4 h-4 text-success" />
+                          <Unlock className="w-4 h-4 text-primary" />
                         ) : (
-                          <Lock className="w-4 h-4 text-muted-foreground opacity-50" />
+                          <Lock className="w-4 h-4 text-muted-foreground/40" />
                         )}
-                        <h3 className="text-lg font-semibold font-display group-hover:text-primary transition-colors">
+                        <h3 className="text-base font-semibold font-display text-foreground group-hover:text-primary transition-colors">
                           {mod.title}
                         </h3>
                       </div>
                       <p className="text-sm text-muted-foreground">{mod.subtitle}</p>
                     </div>
-                    <mod.icon className="w-8 h-8 text-primary/40 shrink-0 hidden md:block" />
+                    <mod.icon className="w-7 h-7 text-primary/30 shrink-0 hidden md:block" />
                   </div>
 
-                  <div className="flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
+                  <div className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
                     <span className="flex items-center gap-1">
                       <CheckCircle2 className="w-3.5 h-3.5" />
                       {mod.lessons} уроков
@@ -152,8 +152,8 @@ const LearningPath = () => {
                     {mod.tags.map((tag) => (
                       <span key={tag} className={`px-2 py-0.5 rounded-full ${
                         tag === "Бесплатно"
-                          ? "bg-success/15 text-success"
-                          : "bg-secondary text-secondary-foreground"
+                          ? "bg-primary/10 text-primary font-medium"
+                          : "bg-muted text-muted-foreground"
                       }`}>
                         {tag}
                       </span>

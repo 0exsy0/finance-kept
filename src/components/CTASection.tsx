@@ -1,43 +1,32 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Zap } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const CTASection = () => {
   return (
-    <section className="py-24">
+    <section className="py-16 md:py-24">
       <div className="container">
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
+          initial={{ opacity: 0, scale: 0.97 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="relative rounded-2xl overflow-hidden p-12 md:p-16 text-center glow-purple"
+          className="bg-hero rounded-3xl p-10 md:p-16 text-center"
         >
-          {/* Gradient background */}
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-card to-accent/10" />
-          <div className="absolute inset-0 border border-primary/20 rounded-2xl" />
+          <h2 className="text-3xl md:text-5xl font-bold font-display text-primary-foreground mb-4">
+            Готов начать?
+          </h2>
+          <p className="text-lg text-primary-foreground/80 mb-8 max-w-xl mx-auto">
+            Присоединяйся к 1 000+ аналитикам, которые уже прокачали карьеру с Kept Academy.
+            Первый модуль — полностью бесплатный.
+          </p>
 
-          <div className="relative z-10">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-gold/15 text-gold border border-gold/20 mb-6">
-              <Zap className="w-3 h-3" />
-              Первый модуль — бесплатно
-            </div>
+          <button className="group inline-flex items-center justify-center gap-2 px-10 py-4 rounded-full bg-primary-foreground text-primary font-semibold text-base transition-all hover:shadow-lg">
+            Начать обучение
+            <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+          </button>
 
-            <h2 className="text-4xl md:text-5xl font-bold font-display mb-4">
-              Готов начать?
-            </h2>
-            <p className="text-lg text-muted-foreground mb-8 max-w-xl mx-auto">
-              Присоединяйся к 1 200+ аналитикам, которые уже прокачали карьеру с Kept Academy.
-              Первый модуль — полностью бесплатный.
-            </p>
-
-            <button className="group inline-flex items-center justify-center gap-2 px-10 py-4 rounded-lg bg-primary text-primary-foreground font-semibold text-lg glow-purple transition-all hover:scale-105">
-              Начать обучение
-              <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-            </button>
-
-            <p className="text-xs text-muted-foreground mt-4">
-              Без привязки карты · Доступ сразу после регистрации
-            </p>
-          </div>
+          <p className="text-xs text-primary-foreground/60 mt-4">
+            Без привязки карты · Доступ сразу после регистрации
+          </p>
         </motion.div>
       </div>
     </section>
