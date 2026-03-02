@@ -12,15 +12,14 @@ const CTASection = () => {
           className="bg-hero rounded-3xl p-10 md:p-16 text-center"
         >
           <h2 className="text-3xl md:text-5xl font-bold font-display text-primary-foreground mb-4">
-            Готов начать?
+            Начните обучение команды
           </h2>
           <p className="text-lg text-primary-foreground/80 mb-8 max-w-xl mx-auto">
-            Присоединяйся к 1 000+ аналитикам, которые уже прокачали карьеру с Kept Academy.
-            Первый модуль — полностью бесплатный.
+            Первый модуль доступен бесплатно. Посмотрите, подходит ли формат вашей команде, прежде чем принимать решение.
           </p>
 
           <button className="group inline-flex items-center justify-center gap-2 px-10 py-4 rounded-full bg-primary-foreground text-primary font-semibold text-base transition-all hover:shadow-lg">
-            Начать обучение
+            Попробовать бесплатно
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
           </button>
 
