@@ -1,13 +1,10 @@
 const Footer = () => {
   return (
-    <footer className="border-t border-border/50 py-12">
+    <footer className="border-t border-border py-10">
       <div className="container">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           <div>
-            <span className="text-lg font-bold font-display">
-              <span className="text-primary">kept</span>
-              <span className="text-muted-foreground font-normal">.academy</span>
-            </span>
+            <span className="text-xl font-bold font-display text-foreground">kept</span>
             <p className="text-xs text-muted-foreground mt-1">Финансовая аналитика на практике</p>
           </div>
           <div className="flex items-center gap-6 text-sm text-muted-foreground">
