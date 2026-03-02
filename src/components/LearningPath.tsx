@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Lock, Unlock, CheckCircle2, Clock, BookOpen, BarChart3, PieChart, Search, LineChart, Target } from "lucide-react";
+import { Lock, Unlock, CheckCircle2, Clock, BookOpen, BarChart3, PieChart, Search, LineChart, Target, TrendingUp } from "lucide-react";
 
 interface Module {
   id: number;
@@ -9,73 +9,65 @@ interface Module {
   hours: number;
   icon: React.ElementType;
   free?: boolean;
-  tags: string[];
 }
 
 const modules: Module[] = [
   {
     id: 0,
-    title: "Твой путь в финансовую элиту",
-    subtitle: "Карьерные треки, зарплаты, реальные истории выпускников",
+    title: "Карьерные возможности",
+    subtitle: "Обзор профессии, карьерные треки, что ожидает на каждом этапе",
     lessons: 5,
     hours: 2,
     icon: Target,
     free: true,
-    tags: ["Бесплатно", "Карьера"],
   },
   {
     id: 1,
-    title: "Язык денег",
-    subtitle: "Базовые механизмы, термины и сленг, который откроет двери",
+    title: "Фундамент финансов",
+    subtitle: "Базовые механизмы, определения, профессиональный сленг",
     lessons: 12,
     hours: 6,
     icon: BookOpen,
-    tags: ["Фундамент", "Теория"],
   },
   {
     id: 2,
-    title: "Читай отчётность как открытую книгу",
-    subtitle: "Баланс, P&L, cash flow — научись видеть то, что скрыто",
+    title: "Базовая финансовая отчётность",
+    subtitle: "Баланс, отчёт о прибылях и убытках, движение денежных средств",
     lessons: 15,
     hours: 10,
     icon: BarChart3,
-    tags: ["Отчётность", "Практика"],
   },
   {
     id: 3,
-    title: "Цифры, которые решают всё",
-    subtitle: "Финансовые коэффициенты и экспресс-диагностика бизнеса",
+    title: "Финансовые коэффициенты и первичный анализ",
+    subtitle: "Ликвидность, рентабельность, оборачиваемость, экспресс-диагностика",
     lessons: 14,
     hours: 8,
     icon: PieChart,
-    tags: ["Анализ", "KPI"],
   },
   {
     id: 4,
-    title: "Рентген бизнеса",
-    subtitle: "Глубокий анализ и оценка реальной стоимости компании",
+    title: "Глубокий анализ бизнеса и оценка стоимости компании",
+    subtitle: "DCF, сравнительный анализ, due diligence, выявление рисков",
     lessons: 18,
     hours: 14,
     icon: Search,
-    tags: ["Оценка", "Due Diligence"],
   },
   {
     id: 5,
-    title: "Архитектор прибыли",
-    subtitle: "Финансовое моделирование: от Excel до автоматизации",
+    title: "Финансовое моделирование",
+    subtitle: "Построение моделей в Excel, сценарный анализ, прогнозирование",
     lessons: 16,
     hours: 12,
     icon: LineChart,
-    tags: ["Моделирование", "Excel"],
   },
   {
     id: 6,
-    title: "Решения на миллион",
-    subtitle: "Инвестиционный анализ и принятие стратегических решений",
+    title: "Инвестиционный анализ и принятие решений",
+    subtitle: "Оценка проектов, NPV, IRR, формирование инвестиционных рекомендаций",
     lessons: 14,
     hours: 10,
-    icon: Target,
-    tags: ["Инвестиции", "Стратегия"],
+    icon: TrendingUp,
   },
 ];
 
@@ -93,7 +85,7 @@ const LearningPath = () => {
             Программа курса
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl">
-            7 модулей. От нуля до уровня аналитика Big&nbsp;4. Каждый шаг — реальная практика на кейсах Kept.
+            7 модулей с практическими заданиями на реальных кейсах. Каждый блок — конкретный навык, который сразу применяется в работе.
           </p>
         </motion.div>
 
@@ -149,15 +141,11 @@ const LearningPath = () => {
                       <Clock className="w-3.5 h-3.5" />
                       {mod.hours}ч
                     </span>
-                    {mod.tags.map((tag) => (
-                      <span key={tag} className={`px-2 py-0.5 rounded-full ${
-                        tag === "Бесплатно"
-                          ? "bg-primary/10 text-primary font-medium"
-                          : "bg-muted text-muted-foreground"
-                      }`}>
-                        {tag}
+                    {mod.free && (
+                      <span className="px-2 py-0.5 rounded-full bg-primary/10 text-primary font-medium">
+                        Бесплатно
                       </span>
-                    ))}
+                    )}
                   </div>
                 </div>
               </motion.div>
