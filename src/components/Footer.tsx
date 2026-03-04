@@ -1,3 +1,5 @@
+import qrCode from "@/assets/qr-code.png";
+
 const Footer = () => {
   return (
     <footer className="border-t border-border py-10">
@@ -12,7 +14,10 @@ const Footer = () => {
             <a href="#" className="hover:text-foreground transition-colors">Оферта</a>
             <a href="#" className="hover:text-foreground transition-colors">Контакты</a>
           </div>
-          <p className="text-xs text-muted-foreground">© 2026 Kept Academy</p>
+          <div className="flex items-center gap-4">
+            <img src={qrCode} alt="QR-код для быстрого доступа" className="w-16 h-16 rounded-lg" />
+            <p className="text-xs text-muted-foreground">© 2026 Kept Academy</p>
+          </div>
         </div>
       </div>
     </footer>
